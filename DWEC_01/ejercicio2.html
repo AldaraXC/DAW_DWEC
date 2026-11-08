@@ -21,7 +21,7 @@
 
             //primero controlamos que el usuario no haya dejado campos vacios ni pulsado cancelar en la ventana emergente
             if (dividendo == "" || dividendo == null){
-                document.write("Error: operación cancelada.<br>");  //añadimos el salto de línea
+                document.write("Error: operación cancelada o valor en blanco.<br>");  //añadimos el salto de línea
 
             } else if (isNaN(dividendo)){//comprobamos que el usuario ha introducido números
                 document.write("Error: debes introducir un número.<br>");
@@ -44,7 +44,7 @@
             divisor = prompt("Introduce el divisor entero. Debe ser entre 0 y 100 (no incluidos).");
 
             if (divisor == "" || divisor == null){
-                document.write("Error: operación cancelada.<br>");
+                document.write("Error: operación cancelada o valor en blanco.<br>");
 
             } else if (isNaN(divisor)){
                 document.write("Error: debes introducir un número.<br>");
