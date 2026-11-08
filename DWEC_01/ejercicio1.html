@@ -1,0 +1,40 @@
+<!--Aldara Maria Cabañas cuevas-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+</head>
+<body>
+    <script>
+        
+        //DECLARACIÓN DE VARIABLES
+        //declaramos las variables con let y usamos la función prompt para pedir al usuario los datos a introducir para darles su valor
+        let nombre = prompt("Introduce tu nombre, por favor.");
+        let genero = prompt("Indica si eres hombre, mujer u otros, por favor.");
+
+        //INTRODUCCIÓN Y VALIDACIÓN DE DATOS
+
+        //usaremos if else para controlar el flujo del programa
+        //primero controlamos que el usuario no haya dejado campos vacios ni pulsado cancelar en la ventana emergente y usamos el operador OR para comparar los valores
+        if (nombre == "" || genero == "" || nombre == null || genero == null){
+            document.write("Debes introducir un nombre y género.<br>"); //usamos document.write para mostrar un mensaje de error
+        } else if (!isNaN(nombre)){ //tambien comprobaremos que el nombre introducido no es un número usando la función isNaN
+            document.write("El nombre no puede ser un número.<br>");
+
+        //IMPRESIÓN DE RESULTADOS
+        } else if (genero == "hombre" || genero == "Hombre" || genero == "HOMBRE"){    //usamos el operador == para comparar el valor de la variable genero con cada género posible en cada caso
+            //ademas usaremos el operador OR para controlar las mayúsculas y minúsculas en los datos que introduce el usuario
+            document.write("Hola " + nombre +", eres hombre.<br>");
+        } else if (genero == "mujer" || genero == "Mujer" || genero == "MUJER"){
+            document.write("Hola " + nombre +", eres mujer.<br>");
+        } else if(genero == "otros" || genero == "Otros" || genero == "OTROS"){
+            document.write("Hola " + nombre +", eres otros.<br>");
+        } else {    //mostraremos un último mensaje en caso de que el usuario no haya introducido ningún género válido
+            document.write("El género introducido no es válido, " + nombre +".<br>");
+        }
+        
+    </script>
+</body>
+</html>

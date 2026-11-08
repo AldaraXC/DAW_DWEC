@@ -1,0 +1,86 @@
+<!--Aldara Maria Cabañas cuevas-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+</head>
+<body>
+    <script>
+        //DECLARACION DE VARIABLES
+        let dividendo, divisor, valoresValidos, continuarTabla;
+        
+        //INTRODUCCIÓN Y VALIDACION DE DATOS
+
+        /*usamos un bucle do while para que se sigan pidiendo los datos hasta que el usuario introduzca valores válidos
+        (un bucle para cada dato pedido)*/
+        do {
+            valoresValidos = false; //le asignamos a la variable valoresValidos el valor false por defecto para cambiarlo a true cuando todo esté correcto
+            dividendo = prompt("Introduce el número entero a dividir. Debe ser entre 100 y 1000 (no incluidos).");
+
+            //primero controlamos que el usuario no haya dejado campos vacios ni pulsado cancelar en la ventana emergente
+            if (dividendo == "" || dividendo == null){
+                document.write("Error: operación cancelada.<br>");  //añadimos el salto de línea
+
+            } else if (isNaN(dividendo)){//comprobamos que el usuario ha introducido números
+                document.write("Error: debes introducir un número.<br>");
+            
+            } else if(dividendo % 1 != 0){  //comprobamos que los numeros introducidos son enteros
+                document.write("Error: debes introducir un número entero.<br>");
+            //comprobamos que el usuario no ha introducido valores fuera del rango permitido
+            } else if (dividendo <= 100 || dividendo >= 1000){
+                document.write("Debes introducir un valor dentro del rango permitido.<br>");
+            
+            } else {
+                dividendo = parseInt(dividendo);  //convertimos las variables a números enteros
+                valoresValidos = true; //asignamos true a la variable para que el código deje de repetirse
+            }
+
+        } while (!valoresValidos);
+
+        do {
+            valoresValidos = false;
+            divisor = prompt("Introduce el divisor entero. Debe ser entre 0 y 100 (no incluidos).");
+
+            if (divisor == "" || divisor == null){
+                document.write("Error: operación cancelada.<br>");
+
+            } else if (isNaN(divisor)){
+                document.write("Error: debes introducir un número.<br>");
+            
+            } else if(divisor % 1 != 0){ 
+                document.write("Error: debes introducir un número entero.<br>");
+            
+            } else if (divisor <= 0 || divisor >= 100){
+                document.write("Debes introducir un valor dentro del rango permitido.<br>");
+            
+            } else {
+                divisor = parseInt(divisor);
+                valoresValidos = true; 
+            }
+
+        } while (!valoresValidos);
+
+        //TABLA DE DIVIDIR
+        
+        continuarTabla = true;  //utilizaremos esta variable para parar el bucle cuando se de cierta condición y no se convierta en uno infinito
+        //usamos un bucle while para realizar las divisiones sucesivas que conformarán la tabla
+        while (continuarTabla && dividendo >= divisor){
+            //creamos variables locales para almacenar el valor del cociente y el resto
+            let cociente = parseInt(dividendo /divisor);
+            let resto = dividendo % divisor;
+            document.write(dividendo + " entre " + divisor + " da " + cociente + " y el resto es " + resto + ".<br>");
+
+            //en caso de que el divisor sea 1 pararemos el bucle para que no sea infinito asignandole el valor false a la variable continuarTabla
+            if (divisor == 1){  
+                continuarTabla = false;
+            } else {
+                dividendo = cociente;//si el divisor no es 1 asignamos al dividendo el valor del cociente para la siguiente repetición
+            }
+            
+        }
+
+    </script>
+</body>
+</html>

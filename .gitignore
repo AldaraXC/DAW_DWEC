@@ -1,0 +1,50 @@
+# ===== Dependencias de JavaScript =====
+node_modules/
+package-lock.json.bak
+npm-debug.log*
+yarn-error.log*
+
+# ===== Secretos (NUNCA subir) =====
+.env
+.env.*
+*.pem
+*.key
+
+# ===== Compilados y builds =====
+build/
+dist/
+.cache/
+coverage/
+
+# ===== NetBeans =====
+nbproject/private/
+nbbuild/
+nbdist/
+nbactions.xml
+
+# ===== Otros editores / IDEs =====
+.vscode/
+.idea/
+*.swp
+
+# ===== Sistema operativo =====
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ===== Entregas comprimidas =====
+# Los zips se generan para entregar al profesor; el código ya está en el repo
+*.zip
+*.rar
+*.7z
+*.tar.gz
+
+# ===== Material que no es tuyo =====
+# Guarda aquí los enunciados y documentos del profesor
+enunciados/
+entregas/
+
+# ===== PDFs =====
+# Los PDF SÍ se suben (documentación tuya, capturas, memorias).
+# Si algún día no quieres subirlos, descomenta la línea siguiente:
+*.pdf
